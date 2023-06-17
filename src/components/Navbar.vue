@@ -72,7 +72,7 @@ nav a {
 }
 
 .menus a:hover {
-  color: #ff5500;
+  color: #ff5a08;
 }
 
 .menus a::before {

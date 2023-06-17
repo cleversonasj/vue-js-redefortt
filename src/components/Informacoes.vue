@@ -5,7 +5,7 @@
     </div>
     <div class="faq">
       <div class="faq-item" v-for="pergunta in perguntas" :key="pergunta.id">
-        <div class="faq-question" @click="toggleAnswer(pergunta)">
+        <div class="faq-question" @click="pergunta.showAnswer = !pergunta.showAnswer">
           <h3>{{ pergunta.pergunta }}</h3>
         </div>
         <div class="faq-answer" v-show="pergunta.showAnswer">
@@ -24,74 +24,64 @@ export default {
       perguntas: [
         {
           id: 1,
+          pergunta: "Quais são as formas de pagamento?",
+          resposta: "Aceitamos pagamento em dinheiro (à vista com desconto). Também aceitamos pagamentos em cartões de crédito e débito, transferência bancária e PIX. Consulte-nos para mais informações.",
+          showAnswer: false
+        },
+        {
+          id: 2,
           pergunta: "O que são redes de proteção?",
           resposta: "Redes de proteção são estruturas feitas de fios resistentes que são instaladas em janelas, sacadas, piscinas, entre outros, para evitar quedas acidentais.",
           showAnswer: false
         },
         {
-          id: 2,
+          id: 3,
           pergunta: "Por que devo instalar redes de proteção em minha residência?",
           resposta: "A instalação de redes de proteção é importante para garantir a segurança de crianças, animais de estimação e evitar acidentes causados por quedas.",
           showAnswer: false
         },
         {
-          id: 3,
+          id: 4,
           pergunta: "Como as redes de proteção funcionam?",
           resposta: "As redes de proteção atuam como uma barreira física, impedindo a passagem de pessoas ou objetos que possam cair.",
           showAnswer: false
         },
         {
-          id: 4,
+          id: 5,
           pergunta: "Quais são os benefícios de usar redes de proteção?",
           resposta: "Os principais benefícios incluem prevenção de acidentes, segurança para crianças e animais de estimação, manutenção da privacidade e tranquilidade para desfrutar de ambientes abertos.",
           showAnswer: false
         },
         {
-          id: 5,
+          id: 6,
           pergunta: "Como escolher o tamanho correto da rede de proteção?",
           resposta: "É necessário medir as dimensões do local onde será instalada a rede e escolher uma opção que se ajuste adequadamente.",
           showAnswer: false
         },
         {
-          id: 6,
+          id: 7,
           pergunta: "As redes de proteção são seguras para crianças e animais de estimação?",
           resposta: "Sim, as redes de proteção são projetadas para suportar peso e são seguras para crianças e animais de estimação.",
           showAnswer: false
         },
         {
-          id: 7,
+          id: 8,
           pergunta: "É possível ver através das redes de proteção?",
           resposta: "Sim, as redes de proteção possuem tramas que permitem uma excelente visibilidade.",
           showAnswer: false
         },
         {
-          id: 8,
+          id: 9,
           pergunta: "As redes de proteção têm prazo de validade?",
           resposta: "Sim, as redes de proteção possuem um período de vida útil, que varia de acordo com o material e as condições de uso. As redes REDEFORTT possuem alta durabilidade e resistência e possuem proteção contra raios UV, o que aumenta a vida útil do produto.",
-          showAnswer: false
-        },
-        {
-          id: 9,
-          pergunta: "Quais são as formas de pagamento?",
-          resposta: "Aceitamos pagamento em dinheiro (à vista com desconto). Também aceitamos pagamentos em cartões de crédito e débito, transferência bancária e PIX. Consulte-nos para mais informações.",
           showAnswer: false
         }
       ]
     };
   },
   methods: {
-    toggleAnswer(event) {
-      var eventAnterior = 0;
-      if(event.id != eventAnterior){
-        this.perguntas.forEach((pergunta) => {
-          if(pergunta.id == event.id){
-            pergunta.showAnswer = !pergunta.showAnswer;
-          }else{
-            pergunta.showAnswer = false;
-          }
-        });
-      }
-      
+    toggleAnswer() {
+      console.log(this.perguntas)
     }
   }
 };

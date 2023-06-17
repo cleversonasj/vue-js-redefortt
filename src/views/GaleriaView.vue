@@ -154,7 +154,7 @@ button {
 
 h2 {
   font-weight: bold;
-  color: #f00;
+  color: rgb(241, 6, 6);
   text-align: center;
 }
 

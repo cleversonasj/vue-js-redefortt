@@ -54,6 +54,7 @@ img {
 }
 
 nav {
+  position: inherit;
   background-color: #0c2a46;
   padding: 5px;
   display: flex;
@@ -119,12 +120,13 @@ nav a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 110%;
   background-color: #0c2a46;
   display: none;
   z-index: 1;
   transition: transform 0.3s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 .menu-overlay.show {
@@ -133,9 +135,11 @@ nav a {
 }
 
 .menu-options {
+  height: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 40px;
 }
 
@@ -144,6 +148,8 @@ nav a {
   padding: 10px;
   text-decoration: none;
   color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 768px) {
